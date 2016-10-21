@@ -1,0 +1,23 @@
+@mixin displayLeft(){
+	position: relative;
+	float: left;
+	display: inline-block;
+	vertical-align: top;
+	zoom: 1; /* Fix for IE7 */
+	*display: inline; /* Fix for IE7 */
+}
+
+@mixin transitions($class, $timing, $ease){
+	-webkit-transition: $class $timing $ease;
+	   -moz-transition: $class $timing $ease;
+	    -ms-transition: $class $timing $ease;
+	     -o-transition: $class $timing $ease;
+	        transition: $class $timing $ease;
+}
+
+@mixin opacity($val){
+	opacity: $val;
+	filter: alpha(opacity=($val * 100));
+	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=($val * 100));
+	-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(($val * 100))';
+}
