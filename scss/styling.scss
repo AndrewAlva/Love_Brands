@@ -1,88 +1,297 @@
 @import 'mixins';
+@import 'fonts';
 
-// MANDELBROT Boilerplate style
 	
-	// Variables
-	$mainHeight: 50px;
-	$mbrtLightGray: #eee;
-	$mbrtDarkGray: #303030;
+// Variables
+$mainWidth: 1200px;
+$mainColour: #fff;
+$mainRed: #c8243f;
+$homeBGC: #e2c3a7;
 
-	#mbrtWrap{
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		margin: 0;
-		padding: 0;
-		overflow: hidden;
+#mbrtWrap{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
 
-		.innerWrap{
-			position: absolute;
-			width: 90%; // Fall back
-			width: calc(100% - 20px);
-			height: 90%; // Fall back
-			height: calc(100% - 20px);
-			margin: auto;
-			top: 0; bottom: 0; left: 0; right: 0;
-			overflow: scroll;
-			background-color: $mbrtLightGray;
-
-			header{
-				position: fixed;
-				width: 50%;
-				height: $mainHeight;
-				right: 10px;
-				border: 1px solid $mbrtDarkGray;
-				
-				li{
-					@include displayLeft();
-					width: 20%;
-
-				}
-	
-			}
-
-			section{
-				position: relative;
-				width: 100%;
-				top: ($mainHeight * 2);
-			}
-
-			footer{
-				position: fixed;
-				width: 200px;
-				height: $mainHeight;
-				left: 10px;
-				bottom: 10px;
-				border: 1px solid $mbrtDarkGray;
-
-				li{
-					@include displayLeft();
-					width: 25%;
-					text-transform: uppercase;
+	.mnColour-1{
+		ul{
+			li{
+				a{
+					color: $mainColour;
 				}
 			}
-
-			.mbrtBttns{
-				line-height: $mainHeight;
+			
+			.mainLogo{
+				a{
+					.blackLB{
+						@include opacity(1);
+					}
+				}
 			}
-
-			a{
-				display: block;
-				text-align: center;
-				text-decoration: none;
-				color: $mbrtLightGray;
-				font-weight: lighter;
-				background-color: $mbrtDarkGray;
-
-				@include transitions(all, 0.3s, ease-in-out);
-
-				&:hover{
-					color: $mbrtDarkGray;
-					background-color: $mbrtLightGray;
-					@include opacity(0.5);
+			.mainTitles{
+				a{
+					border-right: 2px solid $mainColour;
 				}
 			}
 		}
 	}
 
-// END MANDELBROT style
+	#mainNavigator{
+		z-index: 1000000000;
+		position: fixed;
+		width: $mainWidth;
+		height: 63px;
+		margin: auto; 
+		right: 0; left: 0;
+		top: 40px;
+		font-family: 'Helvetica Bold Condensed';
+		font-size: 15px;
+		-webkit-font-smoothing: antialiased;
+		   -moz-font-smoothing: antialiased;
+		    -ms-font-smoothing: antialiased;
+		     -o-font-smoothing: antialiased;
+		        font-smoothing: antialiased;
+		
+		ul{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			margin: 0; padding: 0;
+
+			li{
+				@include displayLeft();
+				text-transform: uppercase;
+				
+				a{
+					display: block;
+					text-decoration: none;
+					@include transitions(all, 0.4s, ease-out);
+				}
+			}
+
+			.mainLogo{
+				width: 275px;
+				height: 100%;
+
+				a{
+					position: absolute;
+					width: 230px;
+					height: 62px;
+					margin: auto;
+					top: 0; bottom: 0; left: 0; right: 0;
+
+					img{
+						position: absolute;
+						@include transitions(opacity, 0.4s, ease-out);
+					}
+				}
+			}
+
+			.mainTitles{
+				height: 30px;
+				top: 23px;
+				overflow: hidden;
+				
+				a{
+					position: relative;
+					height: 30px;
+					padding: 0 18px;
+				}
+			}
+
+			.oneLine{
+				a{
+					line-height: 33px;
+				}
+			}
+			.doubleLine{
+				a{
+					line-height: 16px;
+				}
+			}
+
+			.revealOptns{
+				@include transitions(all, 0.4s, ease-out);
+
+				&:hover{
+					height: 155px;
+				}
+
+				.hiddenOptns{
+					width: 131px;
+					margin-top: 25px;
+					margin-left: auto;
+					margin-right: auto;
+					a{
+						width: 95px;
+						height: 35px;
+						line-height: 38px;
+						margin-bottom: 8px;
+						border: none;
+						text-align: center;
+						background-color: $mainRed;
+						@include roundBorder(4px);
+						@include dropShadow(6px, 8px, 20px);
+						@include opacity(1);
+						@include transitions(opacity, 0.3s, ease-out);
+
+						&:hover{
+							@include opacity(0.5);
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	#yield{
+		z-index: 1;
+		position: absolute;
+		width: $mainWidth;
+		height: 100%;
+		margin: auto;
+		left: 0; right: 0; 
+		overflow: hidden;
+		@include boxFit();
+
+		#homeWrapper{
+			background-color: $homeBGC;
+			background-image: url('https://placeholdit.imgix.net/~text?txtsize=100&txt=1200%C3%97800&w=1200&h=800');
+			background-position: bottom;
+			background-repeat: no-repeat;
+		}
+
+		.yieldedWrapper{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			// padding: 105px 0 0 0;
+			// @include boxFit();
+			list-style: none;
+
+			ul{
+				list-style: none;
+				margin: 0; padding: 0;
+			}
+
+			.arrowControls{
+				position: absolute;
+				width: 30px;
+				height: 30px;
+				margin: auto;
+				top: 60px; bottom: 0;
+				@include roundBorder(50%);
+				border: 2px solid $mainColour;
+
+				a{
+					display: block;
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			.prevControl{
+				left: 40px;
+			}
+			.nextControl{
+				right: 40px;
+			}
+
+			#pageSlider{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+
+				#slide-0{background-color: rgba(255,255,255,0.6);}
+				#slide-1{background-color: rgba(0,255,255,0.6);}
+				#slide-2{background-color: rgba(255,0,255,0.6);}
+
+				.slides{
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					@include boxFit();
+					text-align: center;
+		   			display: none;
+		   			@include transitions(all, 0.9s, ease);
+
+		   			h1{
+		   				display: table-cell;
+						vertical-align: middle;
+						color: #fff;
+						font-weight: lighter;
+		   			}
+				}
+
+				.active{
+					@include opacity(1);
+					display: table;
+					-webkit-transform: translateX(0);
+					   -moz-transform: translateX(0);
+					    -ms-transform: translateX(0);
+					     -o-transform: translateX(0);
+					        transform: translateX(0);
+				}
+
+				.left{
+					@include opacity(0);
+					-webkit-transform: translateX(-34%);
+					   -moz-transform: translateX(-34%);
+					    -ms-transform: translateX(-34%);
+					     -o-transform: translateX(-34%);
+					        transform: translateX(-34%);
+				}
+				.right{
+					@include opacity(0);
+					-webkit-transform: translateX(34%);
+					   -moz-transform: translateX(34%);
+					    -ms-transform: translateX(34%);
+					     -o-transform: translateX(34%);
+					        transform: translateX(34%);
+				}
+			}
+
+			#pagination{
+				position: absolute;
+				display: table;
+				width: 100px;
+				height: 22px;
+				margin: auto;
+				left: 0; right: 0;
+				bottom: 45px;
+
+				li{
+					position: relative;
+					display: table-cell;
+
+					a{
+						position: absolute;
+						width: 10px;
+						height: 10px;
+						@include roundBorder(50%);
+						margin: auto;
+						top: 0; bottom: 0; left: 0; right: 0;
+						background-color: $mainRed;
+						@include opacity(0.3);
+						@include transitions(opacity, 0.4s, ease-out);
+
+						&:hover{
+							@include opacity(1);
+						}
+					}
+
+					.active{
+						@include opacity(1);
+					}
+				}
+			}
+		}
+	}
+}
+
+
+

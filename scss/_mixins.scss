@@ -2,7 +2,7 @@
 	position: relative;
 	float: left;
 	display: inline-block;
-	vertical-align: top;
+	vertical-align: middle;
 	zoom: 1; /* Fix for IE7 */
 	*display: inline; /* Fix for IE7 */
 }
@@ -20,4 +20,22 @@
 	filter: alpha(opacity=($val * 100));
 	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=($val * 100));
 	-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(($val * 100))';
+}
+
+@mixin dropShadow($Xdrop, $Ydrop, $blur){
+	-webkit-box-shadow: $Xdrop $Ydrop $blur rgba(0,0,0,0.25);
+	   -moz-box-shadow: $Xdrop $Ydrop $blur rgba(0,0,0,0.25);
+			box-shadow: $Xdrop $Ydrop $blur rgba(0,0,0,0.25);
+}
+
+@mixin roundBorder($val){
+	-webkit-border-radius: $val;
+	   -moz-border-radius: $val;
+			border-radius: $val;
+}
+
+@mixin boxFit(){
+	-webkit-box-sizing: border-box;
+  	   -moz-box-sizing: border-box;
+  			box-sizing: border-box;
 }
