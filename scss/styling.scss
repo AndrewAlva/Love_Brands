@@ -1330,6 +1330,91 @@ $storyBGC: #000;
 				}
 			}
 		}
+
+		#clientsWrapper{
+			.clientsBox{
+				position: absolute;
+				width: 1000px;
+				height: 620px;
+				margin: auto;
+				left: 0; right: 0;
+				top: 220px;
+				text-align: center;
+
+				.clientsTitle{
+					position: relative;
+					float: left;
+					width: 100%;
+					height: 84px;
+					line-height: 84px;
+					margin-bottom: 50px;
+
+					h1{
+						margin: 0;
+						font-family: 'Helvetica Light Condensed';
+						font-weight: 300;
+						font-size: 32px;
+						@include smoothFont();
+
+						img{
+							width: 300px;
+							margin-top: -10px;
+						}
+					}
+				}
+
+				.clientsGrid{
+					position: relative;
+					float: left;
+					width: 100%;
+					height: 450px;
+
+					.rows{
+						position: relative;
+						float: left;
+						width: 100%;
+						height: 80px;
+
+						.cell{
+							position: relative;
+							float: left;
+							height: 100%;
+							@include boxFit();
+
+							img{
+								position: absolute;
+								margin: auto;
+								top: 0; bottom: 0; left: 0; right: 0;
+								height: 70px;
+							}
+
+							.large-logos{
+								width: 150px;
+								height: auto;
+							}
+						}
+
+						.five-cell{
+							width: 20%;
+						}
+						.four-cell{
+							width: 25%;
+						}
+					}
+				}
+
+				.clientsBye{
+					position: relative;
+					float: left;
+					width: 100%;
+					height: 40px;
+					font-family: 'Helvetica Light Condensed';
+					font-weight: 300;
+					@include smoothFont();
+					font-size: 32px;
+				}
+			}
+		}
 	}
 }
 

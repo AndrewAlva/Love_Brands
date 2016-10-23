@@ -1236,6 +1236,80 @@
           -o-font-smoothing: antialiased;
           font-smoothing: antialiased;
           font-size: 22px; }
+    #mbrtWrap #yield #clientsWrapper .clientsBox {
+      position: absolute;
+      width: 1000px;
+      height: 620px;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 220px;
+      text-align: center; }
+      #mbrtWrap #yield #clientsWrapper .clientsBox .clientsTitle {
+        position: relative;
+        float: left;
+        width: 100%;
+        height: 84px;
+        line-height: 84px;
+        margin-bottom: 50px; }
+        #mbrtWrap #yield #clientsWrapper .clientsBox .clientsTitle h1 {
+          margin: 0;
+          font-family: 'Helvetica Light Condensed';
+          font-weight: 300;
+          font-size: 32px;
+          -webkit-font-smoothing: antialiased;
+          -moz-font-smoothing: antialiased;
+          -ms-font-smoothing: antialiased;
+          -o-font-smoothing: antialiased;
+          font-smoothing: antialiased; }
+          #mbrtWrap #yield #clientsWrapper .clientsBox .clientsTitle h1 img {
+            width: 300px;
+            margin-top: -10px; }
+      #mbrtWrap #yield #clientsWrapper .clientsBox .clientsGrid {
+        position: relative;
+        float: left;
+        width: 100%;
+        height: 450px; }
+        #mbrtWrap #yield #clientsWrapper .clientsBox .clientsGrid .rows {
+          position: relative;
+          float: left;
+          width: 100%;
+          height: 80px; }
+          #mbrtWrap #yield #clientsWrapper .clientsBox .clientsGrid .rows .cell {
+            position: relative;
+            float: left;
+            height: 100%;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box; }
+            #mbrtWrap #yield #clientsWrapper .clientsBox .clientsGrid .rows .cell img {
+              position: absolute;
+              margin: auto;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              height: 70px; }
+            #mbrtWrap #yield #clientsWrapper .clientsBox .clientsGrid .rows .cell .large-logos {
+              width: 150px;
+              height: auto; }
+          #mbrtWrap #yield #clientsWrapper .clientsBox .clientsGrid .rows .five-cell {
+            width: 20%; }
+          #mbrtWrap #yield #clientsWrapper .clientsBox .clientsGrid .rows .four-cell {
+            width: 25%; }
+      #mbrtWrap #yield #clientsWrapper .clientsBox .clientsBye {
+        position: relative;
+        float: left;
+        width: 100%;
+        height: 40px;
+        font-family: 'Helvetica Light Condensed';
+        font-weight: 300;
+        -webkit-font-smoothing: antialiased;
+        -moz-font-smoothing: antialiased;
+        -ms-font-smoothing: antialiased;
+        -o-font-smoothing: antialiased;
+        font-smoothing: antialiased;
+        font-size: 32px; }
 
 .spriteRS {
   background-image: url("../img/sprites/nav_sprites.png");

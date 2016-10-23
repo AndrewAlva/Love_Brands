@@ -7,7 +7,7 @@ var initQuery = window.location.search;
 var Site = {
 	init: function(){
 		if (initQuery == "") {
-			$('#yield').load('sections/lovemark.html');
+			$('#yield').load('sections/clients.html');
 		};
 	}
 }
