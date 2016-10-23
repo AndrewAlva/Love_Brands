@@ -16,7 +16,42 @@ $storyBGC: #000;
 	z-index: 1000000000000000000;
 	overflow: hidden;
 	@include bgGradientRed();
+	@include transitions(all, 0.8s, ease-out);
+
+	.logoIntro{
+		position: absolute;
+		width: 826px;
+		height: 276px;
+		margin: auto;
+		top: 0; bottom: 0; left: 0; right: 0;
+	}
+
+	.loadingDots{
+		list-style-type: none;
+		position: absolute;
+		width: 170px;
+		height: 36px;
+		margin: auto;
+		left: 0; right: 0;
+		top: 450px; bottom: 0;
+		padding: 0;
+	}
+
+	.isoDots{
+		position: relative;
+		float: left;
+		margin: 0 10px;
+		@include opacity(0.1);
+		@include transitions(opacity, 1.4s, ease-out);
+	}
+
+	.active{
+		@include opacity(1);
+	}
 }
+
+.lb_crystal{@include opacity(0);}
+.lb_hide{display: none;}
 
 #mbrtWrap{
 	position: absolute;
@@ -1435,7 +1470,6 @@ $storyBGC: #000;
 				margin: auto;
 				left: 0; right: 0;
 				top: 220px;
-				border: 1px solid white;
 
 				.topInfo{
 					position: relative;

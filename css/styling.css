@@ -65,7 +65,59 @@
   background: -o-linear-gradient(left, #c8243f 0%, #95152a 100%);
   background: -ms-linear-gradient(left, #c8243f 0%, #95152a 100%);
   background: linear-gradient(to right, #c8243f 0%, #95152a 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8243f', endColorstr='#95152a', GradientType=1 ); }
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8243f', endColorstr='#95152a', GradientType=1 );
+  -webkit-transition: all 0.8s ease-out;
+  -moz-transition: all 0.8s ease-out;
+  -ms-transition: all 0.8s ease-out;
+  -o-transition: all 0.8s ease-out;
+  transition: all 0.8s ease-out; }
+  #loader .logoIntro {
+    position: absolute;
+    width: 826px;
+    height: 276px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+  #loader .loadingDots {
+    list-style-type: none;
+    position: absolute;
+    width: 170px;
+    height: 36px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 450px;
+    bottom: 0;
+    padding: 0; }
+  #loader .isoDots {
+    position: relative;
+    float: left;
+    margin: 0 10px;
+    opacity: 0.1;
+    filter: alpha(opacity=10);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=($val * 100));
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(($val * 100))';
+    -webkit-transition: opacity 1.4s ease-out;
+    -moz-transition: opacity 1.4s ease-out;
+    -ms-transition: opacity 1.4s ease-out;
+    -o-transition: opacity 1.4s ease-out;
+    transition: opacity 1.4s ease-out; }
+  #loader .active {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=($val * 100));
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(($val * 100))'; }
+
+.lb_crystal {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=($val * 100));
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(($val * 100))'; }
+
+.lb_hide {
+  display: none; }
 
 #mbrtWrap {
   position: absolute;
@@ -1343,8 +1395,7 @@
         margin: auto;
         left: 0;
         right: 0;
-        top: 220px;
-        border: 1px solid white; }
+        top: 220px; }
         #mbrtWrap #yield #contactWrapper .contactBox .topInfo {
           position: relative;
           width: 100%;
