@@ -381,7 +381,7 @@
       width: 1200px;
       height: 100%;
       margin: auto;
-      left: 0;
+      left: 50px;
       right: 0;
       padding: 0; }
       #mbrtWrap #mainNavigator ul li {
@@ -525,11 +525,6 @@
           -webkit-box-sizing: border-box;
           -moz-box-sizing: border-box;
           box-sizing: border-box;
-          -webkit-transition: all 0.5s ease-out;
-          -moz-transition: all 0.5s ease-out;
-          -ms-transition: all 0.5s ease-out;
-          -o-transition: all 0.5s ease-out;
-          transition: all 0.5s ease-out;
           display: none; }
         #mbrtWrap #yield .yieldedWrapper .pageSlider .activeSlide {
           display: block;
@@ -807,6 +802,12 @@
             font-size: 28px;
             height: 30px;
             line-height: 30px; }
+    #mbrtWrap #yield #storyWrapper .pageSlider .slides {
+      -webkit-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      -ms-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out; }
     #mbrtWrap #yield #doWrapper .slidesjs-pagination {
       width: 180px; }
     #mbrtWrap #yield #doWrapper .pageSlider .slides .letterBox {

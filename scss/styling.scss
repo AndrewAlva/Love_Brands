@@ -376,7 +376,7 @@ $storyBGC: #000;
 			width: $mainWidth;
 			height: 100%;
 			margin: auto;
-			left: 0; right: 0;
+			left: 50px; right: 0;
 			padding: 0;
 
 			li{
@@ -513,7 +513,6 @@ $storyBGC: #000;
 					width: 100%;
 					height: 100%;
 					@include boxFit();
-					@include transitions(all, 0.5s, ease-out);
 		   			display: none;
 				}
 
@@ -820,6 +819,10 @@ $storyBGC: #000;
 							.line-4{font-size: 28px; height: 30px; line-height: 30px;}
 						}
 					}
+				}
+
+				.slides{
+					@include transitions(all, 0.5s, ease-out);
 				}
 			}
 		}
