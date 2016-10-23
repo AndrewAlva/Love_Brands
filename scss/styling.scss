@@ -9,6 +9,15 @@ $mainRed: #c8243f;
 $homeBGC: #e2c3a7;
 $storyBGC: #000;
 
+#loader{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1000000000000000000;
+	overflow: hidden;
+	@include bgGradientRed();
+}
+
 #mbrtWrap{
 	position: absolute;
 	width: 100%;
@@ -1412,6 +1421,182 @@ $storyBGC: #000;
 					font-weight: 300;
 					@include smoothFont();
 					font-size: 32px;
+				}
+			}
+		}
+
+		#contactWrapper{
+			@include bgGradientGray();
+
+			.contactBox{
+				position: absolute;
+				width: 1000px;
+				height: 700px;
+				margin: auto;
+				left: 0; right: 0;
+				top: 220px;
+				border: 1px solid white;
+
+				.topInfo{
+					position: relative;
+					width: 100%;
+					height: 320px;
+					float: left;
+					margin-bottom: 20px;
+
+					.mapContainer{
+						position: absolute;
+						margin: auto;
+						left: 0; right: 50px;
+						width: 320px;
+						height: 320px;
+						border: 1px solid #fff;
+
+						.iframeHolder{
+							position: absolute;
+							margin: auto;
+							top: 0; bottom: 0; left: 0; right: 0;
+							width: 300px;
+							height: 300px;
+						}
+					}
+
+					.dataContainer{
+						position: absolute;
+						right: 0;
+						width: 300px;
+						height: 320px;
+						text-align: right;
+						font-family: 'Helvetica Light Condensed';
+						font-weight: 300;
+						@include smoothFont();
+
+						.dataTitle{
+							color: $mainRed;
+							border-bottom: 1px solid $mainRed;
+							font-size: 60px;
+							height: 65px;
+							margin-top: 35px;
+							margin-bottom: 30px;
+						}
+
+						.dataAddress{
+							color: #fff;
+							font-size: 22px;
+							line-height: 23px;
+
+							.address, .mail{
+								margin-bottom: 20px;
+
+								.boldie{
+									font-family: 'Helvetica Bold Condensed';
+									font-weight: 700;
+								}
+							}
+						}
+					}
+				}
+
+				.bottomForm{
+					position: relative;
+					width: 100%;
+					float: left;
+					color: #fff;
+					font-family: 'Helvetica Light Condensed';
+					font-weight: 300;
+					@include smoothFont();
+
+					.formCTA{
+						position: relative;
+						float: left;
+						width: 50%;
+						height: 44px;
+						font-size: 38px;
+						margin-bottom: 30px;
+					}
+
+					#lbForm{
+						position: relative;
+						float: left;
+						width: 100%;
+
+						.column{
+							position: relative;
+							float: left;
+							width: 50%;
+
+							input, textarea{
+								@include roundBorder(5px);
+							}
+						}
+
+						.leftColumn{
+							.labels{
+								position: relative;
+								width: 100%;
+								height: 35px;
+								float: left;
+								margin-bottom: 20px;
+
+								div{
+									position: relative;
+									float: left;
+									width: 90px;
+									height: 35px;
+									line-height: 39px;
+									font-size: 23px;
+								}
+
+								input{
+									position: relative;
+									float: left;
+									width: 350px;
+									height: 35px;
+									border: 1px solid #fff;
+									@include boxFit();
+									background: none;
+								}
+							}
+						}
+
+						.rightColumn{
+							.label{
+								position: relative;
+								width: 100%;
+								margin-top: -32px;
+								font-size: 23px;
+
+								div{}
+
+								textarea{
+									width: 100%;
+									height: 200px;
+									@include boxFit();
+									color: #626262;
+									border: none;
+								}
+
+								input{
+									float: right;
+									width: 100px;
+									height: 40px;
+									line-height: 35px;
+									@include boxFit();
+									padding: 5px 10px;
+									border: none;
+									text-align: center;
+									background: #fff;
+									color: #626262;
+
+									&:hover{
+										margin-top: 2px;
+										background: #626262;
+										color: #000;
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		}
