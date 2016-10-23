@@ -1079,6 +1079,257 @@ $storyBGC: #000;
 				}
 			}
 		}
+
+		#lovemarkWrapper{
+			@include bgGradientGray();
+			color: #fff;
+
+			.slidesjs-pagination{
+				width: 180px;
+			}
+
+			.pageSlider{
+				.slide-0{
+					.sectionTitle{
+						position: absolute;
+						width: 615px;
+						height: 110px;
+						margin: auto;
+						top: 0; bottom: 0;
+						left: 0; right: 0;
+						text-align: center;
+						h1{
+							font-size: 80px;
+							font-family: 'Helvetica Medium Condensed';
+							font-weight: 500;
+							@include smoothFont();
+						}
+					}
+				}
+
+				.slide-1{
+					background-color: #000;
+
+					.whyBox{
+						position: absolute;
+						width: 750px;
+						height: 470px;
+						margin: auto;
+						left: 0; right: 0;
+						top: 260px;
+						text-align: left;
+
+						.quoteBox{
+							position: relative;
+							float: left;
+							width: 100%;
+							height: 75px;
+							margin-bottom: 10px;
+
+							h1{
+								margin: 0;
+								font-family: 'Gill';
+								font-weight: 700;
+								font-size: 47px;
+								color: #7f7f7f;
+
+								.redie{
+									color: $mainRed;
+								}
+							}
+						}
+
+						.questionBox{
+							position: relative;
+							float: left;
+							width: 100%;
+							height: 40px;
+							margin-bottom: 30px;
+
+							h2{
+								margin: 0;
+								@include smoothFont();
+								font-family: 'Helvetica Light Condensed';
+								font-weight: 500;
+								font-style: italic;
+								font-size: 32px;
+							}
+						}
+
+						.comparisonBox{
+							position: relative;
+							float: left;
+							width: 100%;
+
+							.column{
+								position: relative;
+								width: 50%;
+								float: left;
+								font-family: 'Helvetica Light Condensed';
+								font-weight: 500;
+
+								.headRow{
+									text-transform: uppercase;
+
+									h3{
+										margin: 0;
+										font-size: 28px;
+										@include smoothFont();
+									}
+								}
+
+								.bodyRows{
+									@include smoothFont();
+									font-size: 24px;
+									line-height: 28px;
+								}
+							}
+
+							.leftColumn{
+								.headRow{
+									color: #7f7f7f;
+								}
+							}
+							.rightColumn{
+								@include boxFit();
+								padding-left: 60px;
+
+								.headRow{
+									color: #ff0000;
+								}
+							}
+						}
+					}
+				}
+
+				.slide-2{
+					@include bgGradientRed();
+
+					.recipeBox{
+						position: absolute;
+						width: 780px;
+						height: 470px;
+						margin: auto;
+						left: 0; right: 0;
+						top: 295px;
+						text-align: left;
+
+						.recipeTitle{
+							position: relative;
+							width: 100%;
+							float: left;
+
+							h1{
+								margin: 0;
+								margin-bottom: 30px;
+								font-family: 'Helvetica Light Condensed', sans-serif;
+								font-weight: 300;
+								font-size: 49px;
+								@include smoothFont();
+
+								.boldie{
+									font-family: 'Helvetica Bold Condensed', sans-serif;
+									font-weight: bold;
+								}
+							}
+						}
+
+						.recipeDescription{
+							position: relative;
+							width: 100%;
+							float: left;
+
+							.recipe{
+								position: relative;
+								width: 100%;
+								height: 55px;
+								line-height: 55px;
+								float: left;
+								margin-bottom: 30px;
+
+								.ingredient{
+									position: relative;
+									float: left;
+									@include boxFit();
+									padding-right: 20px;
+									font-family: 'Helvetica Bold Condensed', sans-serif;
+									font-weight: bold;
+									font-size: 40px;
+								}
+								.description{
+									position: relative;
+									float: left;
+									@include boxFit();
+									font-family: 'Helvetica Light Condensed', sans-serif;
+									font-weight: 300;
+									font-size: 33px;
+									@include smoothFont();
+									white-space: nowrap;
+								}
+							}
+
+							.recipe-3{
+								.description{
+									line-height: 38px;
+									padding-top: 11px;
+								}
+							}
+						}
+					}
+				}
+
+				.slide-3{
+					.promiseBox{
+						position: absolute;
+						width: 700px;
+						height: 470px;
+						margin: auto;
+						left: 0; right: 0;
+						top: 275px;
+						text-align: left;
+
+						.questionBox, .promises{
+							position: relative;
+							width: 100%;
+							float: left;
+							margin-bottom: 30px;
+						}
+
+						.questionBox{
+							font-family: 'Helvetica Medium Condensed';
+							font-weight: 500;
+							@include smoothFont();
+							font-style: italic;
+							font-size: 40px;
+						}
+
+						.promises{
+							.concept{
+								position: relative;
+								float: left;
+								width: 100%;
+								height: 30px;
+								line-height: 30px;
+								float: left;
+								font-family: 'Helvetica Bold Condensed';
+								font-weight: 700;
+								font-size: 36px;
+							}
+
+							.description{
+								position: relative;
+								float: left;
+								width: 100%;
+								font-family: 'Helvetica Light Condensed';
+								font-weight: 300;
+								@include smoothFont();
+								font-size: 22px;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
