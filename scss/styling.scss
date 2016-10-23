@@ -83,10 +83,39 @@ $storyBGC: #000;
 	}
 }
 
-.storyYield{
+.storyYield-0{
 	background: #000;
 
 	#mainNavigator{
+		ul{
+			li{
+				a{
+					color: $mainColour;
+				}
+			}
+			
+			.mainLogo{
+				a{
+					.blackLB{
+						@include opacity(0);
+					}
+				}
+			}
+			.mainTitles{
+				a{
+					border-right: 2px solid $mainColour;
+				}
+			}
+		}
+	}
+}
+
+.storyYield-1{
+	background: #fafaf1;
+
+	#mainNavigator{
+		@include bgGradientRed();
+
 		ul{
 			li{
 				a{
@@ -332,7 +361,7 @@ $storyBGC: #000;
 	#mainNavigator{
 		z-index: 1000000000;
 		position: fixed;
-		width: $mainWidth;
+		width: 100%;
 		height: 100px;
 		margin: auto; 
 		right: 0; left: 0;
@@ -344,9 +373,11 @@ $storyBGC: #000;
 		
 		ul{
 			position: absolute;
-			width: 100%;
+			width: $mainWidth;
 			height: 100%;
-			margin: 0; padding: 0;
+			margin: auto;
+			left: 0; right: 0;
+			padding: 0;
 
 			li{
 				@include displayLeft();
@@ -482,8 +513,35 @@ $storyBGC: #000;
 					width: 100%;
 					height: 100%;
 					@include boxFit();
+					@include transitions(all, 0.5s, ease-out);
 		   			display: none;
 				}
+
+				.activeSlide{
+					display: block;
+					@include opacity(1);
+					-webkit-transform: translateX(0);
+					   -moz-transform: translateX(0);
+					    -ms-transform: translateX(0);
+					     -o-transform: translateX(0);
+					        transform: translateX(0);
+			    }
+				.right{
+					@include opacity(0);
+					-webkit-transform: translateX(100%);
+					   -moz-transform: translateX(100%);
+					    -ms-transform: translateX(100%);
+					     -o-transform: translateX(100%);
+					        transform: translateX(100%);
+			    }
+				.left{
+					@include opacity(0);
+					-webkit-transform: translateX(-100%);
+					   -moz-transform: translateX(-100%);
+					    -ms-transform: translateX(-100%);
+					     -o-transform: translateX(-100%);
+					        transform: translateX(-100%);
+			    }
 
 			}
 		}
@@ -622,9 +680,8 @@ $storyBGC: #000;
 		}
 
 		#storyWrapper{
-			background-color: $storyBGC;
 
-			.slidesjs-pagination{
+			.mbrt-pagination{
 				width: 90px;
 			}
 
@@ -705,8 +762,9 @@ $storyBGC: #000;
 
 				.slide-1{
 					background-image: url('../img/bgs/bg_braing.jpg');
-					background-position: bottom;
+					background-position: center center;
 					background-repeat: no-repeat;
+					background-size: cover;
 
 					.philoBox{
 						position: absolute;
@@ -802,6 +860,7 @@ $storyBGC: #000;
 			    					height: 140px;
 			    					margin: auto;
 			    					left: 0; right: 0;
+			    					@include heartBeating();
 			    				}
 		    				}
 
@@ -1664,6 +1723,7 @@ $storyBGC: #000;
 								margin: auto;
 								top: 0; bottom: 0; left: 0; right: 0;
 								height: 70px;
+								@include heartBeating();
 							}
 
 							.large-logos{
@@ -2019,6 +2079,100 @@ $storyBGC: #000;
       .container {
         width: 1170px
       }
+    }
+
+
+
+// Mbrt Special Slider
+	.mbrt-navigation {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        @include roundBorder(50%);
+        margin: auto;
+        top: 40px; bottom: 0;
+        z-index: 1000;
+        background-image: url('../img/sprites/nav_sprites.png');
+        background-repeat: no-repeat;
+    }
+
+    .mbrt-previous {
+      left: 40px;
+    }
+
+    .mbrt-next {
+      right: 40px;
+    }
+
+
+
+	.mbrt-pagination {
+      position: absolute;
+      margin: auto;
+      left: 0; right: 0;
+      bottom: 45px;
+      list-style: none;
+      z-index: 1000;
+    }
+
+    .mbrt-pagination li {
+      float: left;
+      margin: 0 15px;
+    }
+
+    .mbrt-pagination li a {
+      display: block;
+      width: 13px;
+      height: 0;
+      padding-top: 13px;
+      background-position: 0 0;
+      float: left;
+      overflow: hidden;
+    }
+
+    .mbrt-pagination li a.active,
+    .mbrt-pagination li a:hover.active {
+      background-position: 0 -13px
+    }
+
+    .mbrt-pagination li a:hover {
+      background-position: 0 -26px
+    }
+
+    .yieldedWrapper{
+    	.blackSlide{
+    		.mbrt-previous {
+		      background-position: -5px -50px;
+		    }
+
+		    .mbrt-next {
+		      background-position: -50px -50px;
+		    }
+
+
+    		.mbrt-pagination{
+		    	li a {
+			      background-image: url(../img/pagination.png);
+			  	}
+		    }
+    	}
+
+    	.whiteSlide{
+    		.mbrt-previous {
+		      background-position: -5px -5px;
+		    }
+
+		    .mbrt-next {
+		      background-position: -50px -5px;
+		    }
+
+
+		    .mbrt-pagination{
+		    	li a {
+			      background-image: url(../img/pagination_b.png);
+			  	}
+		    }
+    	}
     }
 
 

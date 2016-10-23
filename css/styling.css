@@ -162,17 +162,38 @@
   .homeYield #mainNavigator ul .mainTitles a {
     border-right: 2px solid #fff; }
 
-.storyYield {
+.storyYield-0 {
   background: #000; }
-  .storyYield #mainNavigator ul li a {
+  .storyYield-0 #mainNavigator ul li a {
     color: #fff; }
-  .storyYield #mainNavigator ul .mainLogo a .blackLB {
+  .storyYield-0 #mainNavigator ul .mainLogo a .blackLB {
     opacity: 0;
     filter: alpha(opacity=0);
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=($val * 100));
     -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(($val * 100))'; }
-  .storyYield #mainNavigator ul .mainTitles a {
+  .storyYield-0 #mainNavigator ul .mainTitles a {
     border-right: 2px solid #fff; }
+
+.storyYield-1 {
+  background: #fafaf1; }
+  .storyYield-1 #mainNavigator {
+    background: #c8243f;
+    background: -moz-linear-gradient(left, #c8243f 0%, #95152a 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #c8243f), color-stop(100%, #95152a));
+    background: -webkit-linear-gradient(left, #c8243f 0%, #95152a 100%);
+    background: -o-linear-gradient(left, #c8243f 0%, #95152a 100%);
+    background: -ms-linear-gradient(left, #c8243f 0%, #95152a 100%);
+    background: linear-gradient(to right, #c8243f 0%, #95152a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8243f', endColorstr='#95152a', GradientType=1 ); }
+    .storyYield-1 #mainNavigator ul li a {
+      color: #fff; }
+    .storyYield-1 #mainNavigator ul .mainLogo a .blackLB {
+      opacity: 0;
+      filter: alpha(opacity=0);
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=($val * 100));
+      -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(($val * 100))'; }
+    .storyYield-1 #mainNavigator ul .mainTitles a {
+      border-right: 2px solid #fff; }
 
 .doYield {
   background: #626262;
@@ -342,7 +363,7 @@
   #mbrtWrap #mainNavigator {
     z-index: 1000000000;
     position: fixed;
-    width: 1200px;
+    width: 100%;
     height: 100px;
     margin: auto;
     right: 0;
@@ -357,9 +378,11 @@
     font-smoothing: antialiased; }
     #mbrtWrap #mainNavigator ul {
       position: absolute;
-      width: 100%;
+      width: 1200px;
       height: 100%;
-      margin: 0;
+      margin: auto;
+      left: 0;
+      right: 0;
       padding: 0; }
       #mbrtWrap #mainNavigator ul li {
         position: relative;
@@ -502,7 +525,43 @@
           -webkit-box-sizing: border-box;
           -moz-box-sizing: border-box;
           box-sizing: border-box;
+          -webkit-transition: all 0.5s ease-out;
+          -moz-transition: all 0.5s ease-out;
+          -ms-transition: all 0.5s ease-out;
+          -o-transition: all 0.5s ease-out;
+          transition: all 0.5s ease-out;
           display: none; }
+        #mbrtWrap #yield .yieldedWrapper .pageSlider .activeSlide {
+          display: block;
+          opacity: 1;
+          filter: alpha(opacity=100);
+          filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=($val * 100));
+          -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(($val * 100))';
+          -webkit-transform: translateX(0);
+          -moz-transform: translateX(0);
+          -ms-transform: translateX(0);
+          -o-transform: translateX(0);
+          transform: translateX(0); }
+        #mbrtWrap #yield .yieldedWrapper .pageSlider .right {
+          opacity: 0;
+          filter: alpha(opacity=0);
+          filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=($val * 100));
+          -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(($val * 100))';
+          -webkit-transform: translateX(100%);
+          -moz-transform: translateX(100%);
+          -ms-transform: translateX(100%);
+          -o-transform: translateX(100%);
+          transform: translateX(100%); }
+        #mbrtWrap #yield .yieldedWrapper .pageSlider .left {
+          opacity: 0;
+          filter: alpha(opacity=0);
+          filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=($val * 100));
+          -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(($val * 100))';
+          -webkit-transform: translateX(-100%);
+          -moz-transform: translateX(-100%);
+          -ms-transform: translateX(-100%);
+          -o-transform: translateX(-100%);
+          transform: translateX(-100%); }
     #mbrtWrap #yield #homeWrapper {
       background-color: #e2c3a7;
       background-image: url("../img/bgs/bg_heart.jpg");
@@ -622,133 +681,132 @@
               -webkit-border-radius: 3px;
               -moz-border-radius: 3px;
               border-radius: 3px; }
-    #mbrtWrap #yield #storyWrapper {
-      background-color: #000; }
-      #mbrtWrap #yield #storyWrapper .slidesjs-pagination {
-        width: 90px; }
-      #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 {
-        font-family: 'Helvetica Light Condensed', sans-serif;
+    #mbrtWrap #yield #storyWrapper .mbrt-pagination {
+      width: 90px; }
+    #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 {
+      font-family: 'Helvetica Light Condensed', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-font-smoothing: antialiased;
+      -ms-font-smoothing: antialiased;
+      -o-font-smoothing: antialiased;
+      font-smoothing: antialiased; }
+      #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 .letterBox {
+        position: absolute;
+        width: 630px;
+        height: 720px;
+        margin: auto;
+        top: 150px;
+        left: 0;
+        right: 0;
+        margin-bottom: 50px;
+        color: #fff; }
+        #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 .letterBox .letterTop {
+          position: relative;
+          width: 100%;
+          height: 170px;
+          text-align: center;
+          border-bottom: 1px solid #fff;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box; }
+          #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 .letterBox .letterTop .letterLogo {
+            position: relative;
+            width: 100%;
+            height: 80px;
+            margin-bottom: 20px;
+            float: left; }
+            #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 .letterBox .letterTop .letterLogo img {
+              position: absolute;
+              width: 80px;
+              height: 75px;
+              margin: auto;
+              left: 0;
+              right: 0; }
+          #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 .letterBox .letterTop .letterTitle {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            float: left; }
+            #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 .letterBox .letterTop .letterTitle h2 {
+              margin: 0;
+              padding: 0;
+              font-size: 35px; }
+        #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 .letterBox .letterBody {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          padding: 0 70px;
+          text-align: justify; }
+          #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 .letterBox .letterBody p {
+            font-size: 18px; }
+            #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 .letterBox .letterBody p .trademark {
+              font-size: 14px; }
+          #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 .letterBox .letterBody .boldie {
+            font-family: 'Helvetica Bold Condensed', sans-serif;
+            font-weight: bold; }
+    #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 {
+      background-image: url("../img/bgs/bg_braing.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover; }
+      #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox {
+        position: absolute;
+        width: 300px;
+        height: 230px;
+        left: 70px;
+        top: 180px;
+        text-align: center;
         -webkit-font-smoothing: antialiased;
         -moz-font-smoothing: antialiased;
         -ms-font-smoothing: antialiased;
         -o-font-smoothing: antialiased;
         font-smoothing: antialiased; }
-        #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 .letterBox {
-          position: absolute;
-          width: 630px;
-          height: 720px;
-          margin: auto;
-          top: 150px;
-          left: 0;
-          right: 0;
-          margin-bottom: 50px;
-          color: #fff; }
-          #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 .letterBox .letterTop {
-            position: relative;
-            width: 100%;
-            height: 170px;
-            text-align: center;
-            border-bottom: 1px solid #fff;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box; }
-            #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 .letterBox .letterTop .letterLogo {
-              position: relative;
-              width: 100%;
-              height: 80px;
-              margin-bottom: 20px;
-              float: left; }
-              #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 .letterBox .letterTop .letterLogo img {
-                position: absolute;
-                width: 80px;
-                height: 75px;
-                margin: auto;
-                left: 0;
-                right: 0; }
-            #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 .letterBox .letterTop .letterTitle {
-              position: relative;
-              width: 100%;
-              height: 50px;
-              line-height: 50px;
-              float: left; }
-              #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 .letterBox .letterTop .letterTitle h2 {
-                margin: 0;
-                padding: 0;
-                font-size: 35px; }
-          #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 .letterBox .letterBody {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            padding: 0 70px;
-            text-align: justify; }
-            #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 .letterBox .letterBody p {
-              font-size: 18px; }
-              #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 .letterBox .letterBody p .trademark {
-                font-size: 14px; }
-            #mbrtWrap #yield #storyWrapper .pageSlider .slide-0 .letterBox .letterBody .boldie {
-              font-family: 'Helvetica Bold Condensed', sans-serif;
-              font-weight: bold; }
-      #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 {
-        background-image: url("../img/bgs/bg_braing.jpg");
-        background-position: bottom;
-        background-repeat: no-repeat; }
-        #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox {
-          position: absolute;
-          width: 300px;
-          height: 230px;
-          left: 70px;
-          top: 180px;
-          text-align: center;
-          -webkit-font-smoothing: antialiased;
-          -moz-font-smoothing: antialiased;
-          -ms-font-smoothing: antialiased;
-          -o-font-smoothing: antialiased;
-          font-smoothing: antialiased; }
-          #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoTitle {
-            position: relative;
-            width: 100%;
-            height: 35px;
-            margin-bottom: 30px;
+        #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoTitle {
+          position: relative;
+          width: 100%;
+          height: 35px;
+          margin-bottom: 30px;
+          font-family: 'Helvetica Light Condensed', sans-serif;
+          font-weight: lighter;
+          border-bottom: 1px solid #000;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box; }
+          #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoTitle h2 {
+            margin: 0;
+            padding: 0;
+            font-size: 24px;
+            letter-spacing: 7px; }
+        #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock {
+          position: relative;
+          width: 100%;
+          text-transform: uppercase; }
+          #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock .line-1, #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock .line-2, #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock .line-3 {
             font-family: 'Helvetica Light Condensed', sans-serif;
             font-weight: lighter;
-            border-bottom: 1px solid #000;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box; }
-            #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoTitle h2 {
-              margin: 0;
-              padding: 0;
-              font-size: 24px;
-              letter-spacing: 7px; }
-          #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock {
-            position: relative;
-            width: 100%;
-            text-transform: uppercase; }
-            #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock .line-1, #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock .line-2, #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock .line-3 {
-              font-family: 'Helvetica Light Condensed', sans-serif;
-              font-weight: lighter;
-              white-space: nowrap; }
-            #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock .line-4 {
-              font-family: 'Helvetica Bold Condensed', sans-serif;
-              font-weight: bolder;
-              white-space: nowrap; }
-            #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock .line-2, #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock .line-4 {
-              color: #c8243f; }
-            #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock .line-1 {
-              font-size: 40px;
-              height: 45px; }
-            #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock .line-2 {
-              font-size: 74px;
-              height: 55px;
-              line-height: 80px; }
-            #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock .line-3 {
-              font-size: 26px;
-              height: 40px;
-              line-height: 50px; }
-            #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock .line-4 {
-              font-size: 28px;
-              height: 30px;
-              line-height: 30px; }
+            white-space: nowrap; }
+          #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock .line-4 {
+            font-family: 'Helvetica Bold Condensed', sans-serif;
+            font-weight: bolder;
+            white-space: nowrap; }
+          #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock .line-2, #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock .line-4 {
+            color: #c8243f; }
+          #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock .line-1 {
+            font-size: 40px;
+            height: 45px; }
+          #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock .line-2 {
+            font-size: 74px;
+            height: 55px;
+            line-height: 80px; }
+          #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock .line-3 {
+            font-size: 26px;
+            height: 40px;
+            line-height: 50px; }
+          #mbrtWrap #yield #storyWrapper .pageSlider .slide-1 .philoBox .philoBlock .line-4 {
+            font-size: 28px;
+            height: 30px;
+            line-height: 30px; }
     #mbrtWrap #yield #doWrapper .slidesjs-pagination {
       width: 180px; }
     #mbrtWrap #yield #doWrapper .pageSlider .slides .letterBox {
@@ -777,7 +835,12 @@
             height: 140px;
             margin: auto;
             left: 0;
-            right: 0; }
+            right: 0;
+            -webkit-animation: heart-beats 1.5s ease infinite;
+            -moz-animation: heart-beats 1.5s ease infinite;
+            -ms-animation: heart-beats 1.5s ease infinite;
+            -o-animation: heart-beats 1.5s ease infinite;
+            animation: heart-beats 1.5s ease infinite; }
         #mbrtWrap #yield #doWrapper .pageSlider .slides .letterBox .letterTop .letterTitle {
           position: relative;
           width: 100%;
@@ -1523,7 +1586,12 @@
               bottom: 0;
               left: 0;
               right: 0;
-              height: 70px; }
+              height: 70px;
+              -webkit-animation: heart-beats 1.5s ease infinite;
+              -moz-animation: heart-beats 1.5s ease infinite;
+              -ms-animation: heart-beats 1.5s ease infinite;
+              -o-animation: heart-beats 1.5s ease infinite;
+              animation: heart-beats 1.5s ease infinite; }
             #mbrtWrap #yield #clientsWrapper .clientsBox .clientsGrid .rows .cell .large-logos {
               width: 150px;
               height: auto; }
@@ -1817,5 +1885,66 @@ a:active {
 @media (min-width: 1200px) {
   .container {
     width: 1170px; } }
+.mbrt-navigation {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  margin: auto;
+  top: 40px;
+  bottom: 0;
+  z-index: 1000;
+  background-image: url("../img/sprites/nav_sprites.png");
+  background-repeat: no-repeat; }
+
+.mbrt-previous {
+  left: 40px; }
+
+.mbrt-next {
+  right: 40px; }
+
+.mbrt-pagination {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 45px;
+  list-style: none;
+  z-index: 1000; }
+
+.mbrt-pagination li {
+  float: left;
+  margin: 0 15px; }
+
+.mbrt-pagination li a {
+  display: block;
+  width: 13px;
+  height: 0;
+  padding-top: 13px;
+  background-position: 0 0;
+  float: left;
+  overflow: hidden; }
+
+.mbrt-pagination li a.active,
+.mbrt-pagination li a:hover.active {
+  background-position: 0 -13px; }
+
+.mbrt-pagination li a:hover {
+  background-position: 0 -26px; }
+
+.yieldedWrapper .blackSlide .mbrt-previous {
+  background-position: -5px -50px; }
+.yieldedWrapper .blackSlide .mbrt-next {
+  background-position: -50px -50px; }
+.yieldedWrapper .blackSlide .mbrt-pagination li a {
+  background-image: url(../img/pagination.png); }
+.yieldedWrapper .whiteSlide .mbrt-previous {
+  background-position: -5px -5px; }
+.yieldedWrapper .whiteSlide .mbrt-next {
+  background-position: -50px -5px; }
+.yieldedWrapper .whiteSlide .mbrt-pagination li a {
+  background-image: url(../img/pagination_b.png); }
 
 /*# sourceMappingURL=styling.css.map */
