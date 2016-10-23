@@ -1,6 +1,7 @@
 window.onload = function(){
 	Site.is_loading = false;
 	$('#loader').addClass('lb_crystal');
+	introVideo.play();
 	setTimeout(function(){$('#loader').addClass('lb_hide'); introFadeIn();},600);
 }
 
@@ -10,6 +11,8 @@ $(document).ready(function() {
 	Story_Slider.init();
 	Team_Slider.init();
 	Lovemark_Slider.init();
+
+	var introVideo = document.getElementById("introVideo"); 
 });
 
 
