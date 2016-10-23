@@ -92,11 +92,11 @@
   background: -ms-linear-gradient(left, #c8243f 0%, #95152a 100%);
   background: linear-gradient(to right, #c8243f 0%, #95152a 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8243f', endColorstr='#95152a', GradientType=1 );
-  -webkit-transition: all 0.8s ease-out;
-  -moz-transition: all 0.8s ease-out;
-  -ms-transition: all 0.8s ease-out;
-  -o-transition: all 0.8s ease-out;
-  transition: all 0.8s ease-out; }
+  -webkit-transition: all 0.6s ease-out;
+  -moz-transition: all 0.6s ease-out;
+  -ms-transition: all 0.6s ease-out;
+  -o-transition: all 0.6s ease-out;
+  transition: all 0.6s ease-out; }
   #loader .logoIntro {
     position: absolute;
     width: 826px;
@@ -358,11 +358,11 @@
     background: -ms-linear-gradient(left, #c8243f 0%, #95152a 100%);
     background: linear-gradient(to right, #c8243f 0%, #95152a 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8243f', endColorstr='#95152a', GradientType=1 );
-    -webkit-transition: all 0.8s ease-out;
-    -moz-transition: all 0.8s ease-out;
-    -ms-transition: all 0.8s ease-out;
-    -o-transition: all 0.8s ease-out;
-    transition: all 0.8s ease-out; }
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -ms-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out; }
     #mbrtWrap #videoWrapper .videoContainer {
       position: absolute;
       width: 1200px;
@@ -1321,7 +1321,7 @@
       -ms-transition: all 0.5s ease-out;
       -o-transition: all 0.5s ease-out;
       transition: all 0.5s ease-out; }
-    #mbrtWrap #yield #lovemarkWrapper .slidesjs-pagination {
+    #mbrtWrap #yield #lovemarkWrapper .mbrt-pagination {
       width: 180px; }
     #mbrtWrap #yield #lovemarkWrapper .pageSlider .slide-0 .sectionTitle {
       position: absolute;
@@ -1552,6 +1552,12 @@
         -o-font-smoothing: antialiased;
         font-smoothing: antialiased;
         font-size: 22px; }
+    #mbrtWrap #yield #lovemarkWrapper .pageSlider .slides {
+      -webkit-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      -ms-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out; }
     #mbrtWrap #yield #clientsWrapper .clientsBox {
       position: absolute;
       width: 1000px;

@@ -84,15 +84,15 @@
             <div id="yield">
                 <div id="lovemarkWrapper" class="yieldedWrapper">
 
-                    <div id="lovemarkSlider" class="pageSlider">
-                        <section class="slide-0 slides">
+                    <div id="lovemarkSlider" class="pageSlider blackSlide">
+                        <section id="lovemarkSlide-0" class="slide-0 slides activeSlide">
                             <div class="sectionTitle">
                                 <h1> <div>Para que te </div> <div class="beating">lata</div><div>...</div> </h1>
                             </div>
                         </section>
 
 
-                        <section class="slide-1 slides">
+                        <section id="lovemarkSlide-1" class="slide-1 slides">
                             <div class="whyBox">
                                 <div class="quoteBox">
                                     <h1>
@@ -140,7 +140,7 @@
                         </section>
 
 
-                        <section class="slide-2 slides">
+                        <section id="lovemarkSlide-2" class="slide-2 slides">
                             <div class="recipeBox">
                                 <div class="recipeTitle">
                                     <h1>
@@ -166,7 +166,7 @@
                         </section>
 
 
-                        <section class="slide-3 slides">
+                        <section id="lovemarkSlide-3" class="slide-3 slides">
                             <div class="promiseBox">
                                 <div class="questionBox">
                                     ...y ¿qué les podemos asegurar?
@@ -191,8 +191,26 @@
                             </div>
                         </section>
 
-                        <a href="#" class="slidesjs-previous slidesjs-navigation"><i class="icon-chevron-left"></i></a>
-                        <a href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right"></i></a>
+                        <a href="#" class="mbrt-previous mbrt-navigation"><i class="icon-chevron-left"></i></a>
+                        <a href="#" class="mbrt-next mbrt-navigation"><i class="icon-chevron-right"></i></a>
+
+                        <ul class="mbrt-pagination">
+                            <li class="mbrt-pagination-item">
+                                <a id="lovemarkDot-0" class="sliderDots active" data-slidetogo="0" href="#"></a>
+                            </li>
+
+                            <li class="mbrt-pagination-item">
+                                <a id="lovemarkDot-1" class="sliderDots" data-slidetogo="1" href="#"></a>
+                            </li>
+
+                            <li class="mbrt-pagination-item">
+                                <a id="lovemarkDot-2" class="sliderDots" data-slidetogo="2" href="#"></a>
+                            </li>
+
+                            <li class="mbrt-pagination-item">
+                                <a id="lovemarkDot-3" class="sliderDots" data-slidetogo="3" href="#"></a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -204,17 +222,6 @@
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
-        <!-- SlidesJS Required: Initialize SlidesJS with a jQuery doc ready -->
-            <script>
-                $(function() {
-                    $('#lovemarkSlider').slidesjs({
-                        width: 1200,
-                        height: 900,
-                        navigation: true
-                    });
-                });
-            </script>
-        <!-- End SlidesJS Required -->
 
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

@@ -1,7 +1,7 @@
 window.onload = function(){
 	Site.is_loading = false;
 	$('#loader').addClass('lb_crystal');
-	setTimeout(function(){$('#loader').addClass('lb_hide');},800);
+	setTimeout(function(){$('#loader').addClass('lb_hide');},600);
 }
 
 
@@ -9,6 +9,7 @@ $(document).ready(function() {
 	Site.init();
 	Story_Slider.init();
 	Team_Slider.init();
+	Lovemark_Slider.init();
 });
 
 
@@ -55,7 +56,7 @@ var Site = {
 
 function removeVideo(){
 	$('#videoWrapper').addClass('lb_crystal');
-	setTimeout(function(){$('#videoWrapper').remove();},800);
+	setTimeout(function(){$('#videoWrapper').remove();},600);
 }
 
 // STORY SLIDER OBJECT
@@ -369,5 +370,155 @@ function removeVideo(){
 	});
 
 
+
+// LOVEMARK SLIDER OBJECT
+
+	var Lovemark_Slider = {
+
+		// Flag to prevent overlapping transitions between sections
+		canScroll: true,
+
+		// Set the array with all the screens to manipulate
+		screens: [],
+
+		// Set the slider main navigators objects
+		navDots: [],
+
+		// Declare current active section variable
+		sectionActive: 0,
+
+		// Duration of transition timing animations
+		duration: 500,
+
+		// Detect if background is black or white, 0 = black (OFF) and 1 = white (ON)
+		background: 0,
+		blackSlides: [0, 1, 2, 3],
+		whiteSlides: [],
+
+		// Hide the loading screen
+		loaded: function(){
+			
+		},
+
+		// Initiate function
+		init: function(){
+			// Init the array of section screens to slide
+			Lovemark_Slider.screens = $('#lovemarkSlider').find('.slides');
+			// Init the array of main navigators
+			Lovemark_Slider.navDots = $('#lovemarkSlider').find('.sliderDots');
+
+		},
+
+		// Go prev section, only if there is a prev section to go
+		prev: function(){
+			var index = Lovemark_Slider.sectionActive - 1;
+			if (index < 0) {
+				Lovemark_Slider.goTo((Lovemark_Slider.screens.length - 1));
+			} else {
+				Lovemark_Slider.goTo(index);
+			};
+		},
+
+		// Go next section, only if there is a next section to go
+		next: function(){
+			var index = Lovemark_Slider.sectionActive + 1;
+			if (index >= Lovemark_Slider.screens.length) {
+				Lovemark_Slider.goTo(0);
+			} else {
+				Lovemark_Slider.goTo(index);
+			};
+		},
+
+		// Navigation function
+		goTo: function(index){
+			// Change of section only after any transition ends
+			if (Lovemark_Slider.canScroll && Lovemark_Slider.sectionActive != index) {
+				// Turn on the flag to prevent overlapping section transitions
+				Lovemark_Slider.canScroll = false;
+
+				// Set the new background state
+				if (Lovemark_Slider.blackSlides.indexOf(index) != -1 ) {
+					$('#lovemarkSlider').removeClass('whiteSlide');
+					$('#lovemarkSlider').addClass('blackSlide');
+
+				} else if (Lovemark_Slider.whiteSlides.indexOf(index) != -1 ){
+					$('#lovemarkSlider').removeClass('blackSlide');
+					$('#lovemarkSlider').addClass('whiteSlide');
+				};
+
+				// Declare variables to define the direction of the animations
+				var currentSectionMove;
+				var newSectionMove;
+				// Detect if user is going to the Next or prev section, 
+				// sectionActive < index means Next
+				if (Lovemark_Slider.sectionActive < index){
+					currentSectionMove = 'left';
+					newSectionMove = 'right';
+				} else if (Lovemark_Slider.sectionActive > index){
+					currentSectionMove = 'right';
+					newSectionMove = 'left';
+				};
+
+				// Move the current section outside the space
+				$('#lovemarkSlide-' + Lovemark_Slider.sectionActive).addClass(currentSectionMove);
+				// Set the new section in position to enter
+				$('#lovemarkSlide-' + index).addClass(newSectionMove);
+				$('#lovemarkSlide-' + index).addClass('activeSlide');
+
+				// Update active right nav bar
+				Lovemark_Slider.setNavDots(index);
+
+				// Make a tiny pause(100ms) until the new section is in position
+				setTimeout(function(){
+					// Move the new section to show it
+					$('#lovemarkSlide-' + index).removeClass(newSectionMove);
+					// Wait untill the new section is in position, 
+					// then disappear the old current section, 
+					// update the sectionActive var and 
+					// turn on the 'canScroll' flag again
+					setTimeout(function(){
+						$('#lovemarkSlide-' + Lovemark_Slider.sectionActive).removeClass('activeSlide');
+						$('#lovemarkSlide-' + Lovemark_Slider.sectionActive).removeClass(currentSectionMove);
+						
+
+						Lovemark_Slider.setStates(index);
+						Lovemark_Slider.canScroll = true;
+
+					}, (Lovemark_Slider.duration));
+
+				},100);
+
+			};
+		},
+
+		// Update ['sectionActive var', 'URL search value'] 
+		// according to goTo() function
+		setStates: function(index){
+			Lovemark_Slider.sectionActive = index;
+		},
+
+		setNavDots: function(index){
+			$(Lovemark_Slider.navDots[Lovemark_Slider.sectionActive]).removeClass('active');
+			$(Lovemark_Slider.navDots[index]).addClass('active');
+		}
+	}
+
+//// LOVEMARK SLIDER INTERACTION
+
+	$('#lovemarkWrapper').on('click', '.mbrt-previous', function(event) {
+		event.preventDefault();
+		Lovemark_Slider.prev();
+	});
+	$('#lovemarkWrapper').on('click', '.mbrt-next', function(event) {
+		event.preventDefault();
+		Lovemark_Slider.next();
+	});
+
+
+	// THIS LISTENER WILL BE WORKING ON '.NAV BAR' ELEMENTS
+	$('#lovemarkWrapper').on('click', '.sliderDots', function(event) {
+		event.preventDefault();
+		Lovemark_Slider.goTo($(this).data('slidetogo'));
+	});
 
 
