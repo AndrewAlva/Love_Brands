@@ -55,35 +55,8 @@ $storyBGC: #000;
 
 .homeYield{
 	background: $homeBGC;
-}
 
-#mbrtWrap{
-	z-index: 1;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-
-	#videoWrapper{
-		position: absolute;
-		z-index: 10000000000;
-		width: 100%;
-		height: 100%;
-		@include bgGradientRed();
-		@include transitions(all, .8s, ease-out);
-
-		.videoContainer{
-			position: absolute;
-			width: 1200px;
-			height: 675px;
-			margin: auto;
-			top: 0; bottom: 0; left: 0; right: 0;
-		}
-	}
-
-	.mnColour-1{
+	#mainNavigator{
 		ul{
 			li{
 				a{
@@ -96,6 +69,9 @@ $storyBGC: #000;
 					.blackLB{
 						@include opacity(1);
 					}
+					.whiteLB{
+						@include opacity(0);
+					}
 				}
 			}
 			.mainTitles{
@@ -105,8 +81,12 @@ $storyBGC: #000;
 			}
 		}
 	}
+}
 
-	.mnColour-2{
+.storyYield{
+	background: #000;
+
+	#mainNavigator{
 		ul{
 			li{
 				a{
@@ -128,6 +108,226 @@ $storyBGC: #000;
 			}
 		}
 	}
+}
+
+.doYield{
+	@include bgGradientGray();
+
+	#mainNavigator{
+		ul{
+			li{
+				a{
+					color: $mainColour;
+				}
+			}
+			
+			.mainLogo{
+				a{
+					.blackLB{
+						@include opacity(0);
+					}
+				}
+			}
+			.mainTitles{
+				a{
+					border-right: 2px solid $mainColour;
+				}
+			}
+		}
+	}
+}
+
+.servicesYield{
+	@include bgGradientGray();
+
+	#mainNavigator{
+		ul{
+			li{
+				a{
+					color: $mainColour;
+				}
+			}
+			
+			.mainLogo{
+				a{
+					.blackLB{
+						@include opacity(0);
+					}
+				}
+			}
+			.mainTitles{
+				a{
+					border-right: 2px solid $mainColour;
+				}
+			}
+		}
+	}
+}
+
+.toolsYield{
+	@include bgGradientRed();
+	color: #fff;
+
+	#mainNavigator{
+		ul{
+			li{
+				a{
+					color: $mainColour;
+				}
+			}
+			
+			.mainLogo{
+				a{
+					.blackLB{
+						@include opacity(0);
+					}
+				}
+			}
+			.mainTitles{
+				a{
+					border-right: 2px solid $mainColour;
+				}
+			}
+		}
+	}
+}
+
+.teamYield{
+	background: #000;
+
+	#mainNavigator{
+		ul{
+			li{
+				a{
+					color: $mainColour;
+				}
+			}
+			
+			.mainLogo{
+				a{
+					.blackLB{
+						@include opacity(0);
+					}
+				}
+			}
+			.mainTitles{
+				a{
+					border-right: 2px solid $mainColour;
+				}
+			}
+		}
+	}
+}
+
+.lovemarkYield{
+	@include bgGradientGray();
+	color: #fff;
+
+	#mainNavigator{
+		ul{
+			li{
+				a{
+					color: $mainColour;
+				}
+			}
+			
+			.mainLogo{
+				a{
+					.blackLB{
+						@include opacity(0);
+					}
+				}
+			}
+			.mainTitles{
+				a{
+					border-right: 2px solid $mainColour;
+				}
+			}
+		}
+	}
+}
+
+.clientsYield{
+	background: #fff;
+	color: #000;
+
+	#mainNavigator{
+		ul{
+			li{
+				a{
+					color: #000;
+				}
+			}
+			
+			.mainLogo{
+				a{
+					.whiteLB{
+						@include opacity(0);
+					}
+				}
+			}
+			.mainTitles{
+				a{
+					border-right: 2px solid #000;
+				}
+			}
+		}
+	}
+}
+
+.contactYield{
+	@include bgGradientGray();
+
+	#mainNavigator{
+		ul{
+			li{
+				a{
+					color: $mainColour;
+				}
+			}
+			
+			.mainLogo{
+				a{
+					.blackLB{
+						@include opacity(0);
+					}
+				}
+			}
+			.mainTitles{
+				a{
+					border-right: 2px solid $mainColour;
+				}
+			}
+		}
+	}
+}
+
+#mbrtWrap{
+	z-index: 1;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: scroll;
+
+	#videoWrapper{
+		position: absolute;
+		z-index: 10000000000;
+		width: 100%;
+		height: 100%;
+		@include bgGradientRed();
+		@include transitions(all, .8s, ease-out);
+
+		.videoContainer{
+			position: absolute;
+			width: 1200px;
+			height: 675px;
+			margin: auto;
+			top: 0; bottom: 0; left: 0; right: 0;
+		}
+	}
+
 
 	#mainNavigator{
 		z-index: 1000000000;
@@ -202,6 +402,12 @@ $storyBGC: #000;
 				}
 			}
 
+			.lastNav{
+				a{
+					border: none;
+				}
+			}
+
 			.revealOptns{
 				@include transitions(all, 0.4s, ease-out);
 
@@ -221,6 +427,7 @@ $storyBGC: #000;
 						line-height: 38px;
 						margin-bottom: 8px;
 						border: none;
+						color: #fff;
 						text-align: center;
 						@include roundBorder(4px);
 						@include bgGradientGray();
@@ -250,7 +457,7 @@ $storyBGC: #000;
 		height: 100%;
 		margin: auto;
 		left: 0; right: 0; 
-		overflow: hidden;
+		// overflow: hidden;
 		@include boxFit();
 
 		.yieldedWrapper{
@@ -560,7 +767,6 @@ $storyBGC: #000;
 		}
 
 		#doWrapper{
-			@include bgGradientGray();
 
 		    .slidesjs-pagination{
 		    	width: 180px;
@@ -668,18 +874,18 @@ $storyBGC: #000;
 		    		.letterBox{
 		    			.letterBody{
 		    				.line-0{
-		    					height: 42px;
-		    					font-size: 24px;
+		    					height: 48px;
+		    					font-size: 34px;
 
-		    					.black{font-size: 42px;}
-		    					.uppC{font-size: 35px;}
+		    					.black{font-size: 52px;}
+		    					.uppC{font-size: 45px;}
 		    				}
 
 		    				.line-1{
-		    					font-size: 43px;
+		    					font-size: 56px;
 
 		    					.medium{
-		    						font-size: 45px;
+		    						font-size: 55px;
 		    					}
 		    				}
 		    			}
@@ -710,7 +916,6 @@ $storyBGC: #000;
 		}
 
 		#servicesWrapper{
-			@include bgGradientGray();
 
 		    .mapWrapper{
 		    	position: absolute;
@@ -720,7 +925,7 @@ $storyBGC: #000;
 		    	top: 250px;
 		    	left: 80px; right: 0;
 		    	color: #fff;
-		    	font-family: 'Helvetica Thin 35';
+		    	font-family: 'Helvetica Thin 35', sans-serif;
 		    	font-weight: 100;
 
 		    	.mapCenter{
@@ -839,8 +1044,6 @@ $storyBGC: #000;
 		}
 
 		#toolsWrapper{
-			@include bgGradientRed();
-			color: #fff;
 
 			.toolsBox{
 				position: absolute;
@@ -848,7 +1051,8 @@ $storyBGC: #000;
 				height: 490px;
 				margin: auto;
 				left: 0; right: 0;
-				top: 220px;
+				top: 100px;
+				bottom: 0;
 
 				.toolsTitle{
 					position: relative;
@@ -908,7 +1112,6 @@ $storyBGC: #000;
 		}
 
 		#teamWrapper{
-			background-color: #000;
 
 			.slidesjs-pagination{
 				width: 130px;
@@ -1148,8 +1351,6 @@ $storyBGC: #000;
 		}
 
 		#lovemarkWrapper{
-			@include bgGradientGray();
-			color: #fff;
 
 			.slidesjs-pagination{
 				width: 180px;
@@ -1170,6 +1371,16 @@ $storyBGC: #000;
 							font-family: 'Helvetica Medium Condensed';
 							font-weight: 500;
 							@include smoothFont();
+
+							.beating{
+								@include heartBeating();
+								margin: 0 0 0 20px;
+							}
+
+							div{
+								position: relative;
+								float: left;
+							}
 						}
 					}
 				}
@@ -1484,7 +1695,6 @@ $storyBGC: #000;
 		}
 
 		#contactWrapper{
-			@include bgGradientGray();
 
 			.contactBox{
 				position: absolute;
@@ -1646,9 +1856,9 @@ $storyBGC: #000;
 									color: #626262;
 
 									&:hover{
-										margin-top: 2px;
-										background: #626262;
-										color: #000;
+										margin-top: 1px;
+										@include bgGradientRed();
+										color: #fff;
 									}
 								}
 							}
