@@ -1,7 +1,6 @@
 window.onload = function(){
 	Site.is_loading = false;
 	$('#loader').addClass('lb_crystal');
-	introVideo.play();
 	setTimeout(function(){$('#loader').addClass('lb_hide'); introFadeIn();},600);
 }
 
@@ -11,8 +10,6 @@ $(document).ready(function() {
 	Story_Slider.init();
 	Team_Slider.init();
 	Lovemark_Slider.init();
-
-	var introVideo = document.getElementById("introVideo"); 
 });
 
 
@@ -462,6 +459,10 @@ function introFadeIn(){
 					$('#lovemarkSlider').removeClass('blackSlide');
 					$('#lovemarkSlider').addClass('whiteSlide');
 				};
+
+				// Set the new header navigator style
+				$('#mbrtWrap').removeClass('lovemarkYield-' + Lovemark_Slider.sectionActive);
+				$('#mbrtWrap').addClass('lovemarkYield-' + index);
 
 				// Declare variables to define the direction of the animations
 				var currentSectionMove;

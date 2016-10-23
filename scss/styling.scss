@@ -290,7 +290,7 @@ $storyBGC: #000;
 }
 
 
-.lovemarkYield{
+.lovemarkYield-0, .lovemarkYield-3 {
 	@include bgGradientGray();
 	color: #fff;
 
@@ -317,6 +317,61 @@ $storyBGC: #000;
 		}
 	}
 }
+.lovemarkYield-1{
+	background: #000;
+	color: #fff;
+
+	#mainNavigator{
+		ul{
+			li{
+				a{
+					color: $mainColour;
+				}
+			}
+			
+			.mainLogo{
+				a{
+					.blackLB{
+						@include opacity(0);
+					}
+				}
+			}
+			.mainTitles{
+				a{
+					border-right: 2px solid $mainColour;
+				}
+			}
+		}
+	}
+}
+.lovemarkYield-2{
+	@include bgGradientRed();
+	color: #fff;
+
+	#mainNavigator{
+		ul{
+			li{
+				a{
+					color: $mainColour;
+				}
+			}
+			
+			.mainLogo{
+				a{
+					.blackLB{
+						@include opacity(0);
+					}
+				}
+			}
+			.mainTitles{
+				a{
+					border-right: 2px solid $mainColour;
+				}
+			}
+		}
+	}
+}
+
 
 .clientsYield{
 	background: #fff;
@@ -1493,7 +1548,6 @@ $storyBGC: #000;
 				}
 
 				.slide-1{
-					background-color: #000;
 
 					.whyBox{
 						position: absolute;
@@ -1588,7 +1642,6 @@ $storyBGC: #000;
 				}
 
 				.slide-2{
-					@include bgGradientRed();
 
 					.recipeBox{
 						position: absolute;
