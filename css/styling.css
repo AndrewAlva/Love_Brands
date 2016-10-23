@@ -257,17 +257,29 @@
   .toolsYield #mainNavigator ul .mainTitles a {
     border-right: 2px solid #fff; }
 
-.teamYield {
+.teamYield-0, .teamYield-2 {
   background: #000; }
-  .teamYield #mainNavigator ul li a {
+  .teamYield-0 #mainNavigator ul li a, .teamYield-2 #mainNavigator ul li a {
     color: #fff; }
-  .teamYield #mainNavigator ul .mainLogo a .blackLB {
+  .teamYield-0 #mainNavigator ul .mainLogo a .blackLB, .teamYield-2 #mainNavigator ul .mainLogo a .blackLB {
     opacity: 0;
     filter: alpha(opacity=0);
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=($val * 100));
     -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(($val * 100))'; }
-  .teamYield #mainNavigator ul .mainTitles a {
+  .teamYield-0 #mainNavigator ul .mainTitles a, .teamYield-2 #mainNavigator ul .mainTitles a {
     border-right: 2px solid #fff; }
+
+.teamYield-1 {
+  background: #fff; }
+  .teamYield-1 #mainNavigator ul li a {
+    color: #000; }
+  .teamYield-1 #mainNavigator ul .mainLogo a .whiteLB {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=($val * 100));
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(($val * 100))'; }
+  .teamYield-1 #mainNavigator ul .mainTitles a {
+    border-right: 2px solid #000; }
 
 .lovemarkYield {
   background: #626262;
@@ -1103,7 +1115,7 @@
             -moz-box-sizing: border-box;
             box-sizing: border-box;
             margin-left: 25px; }
-    #mbrtWrap #yield #teamWrapper .slidesjs-pagination {
+    #mbrtWrap #yield #teamWrapper .mbrt-pagination {
       width: 130px; }
     #mbrtWrap #yield #teamWrapper .pageSlider .slide-0, #mbrtWrap #yield #teamWrapper .pageSlider .slide-2 {
       color: #fff;
@@ -1303,6 +1315,12 @@
             width: 150px;
             height: 254px;
             margin: 0 8px; }
+    #mbrtWrap #yield #teamWrapper .pageSlider .slides {
+      -webkit-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      -ms-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out; }
     #mbrtWrap #yield #lovemarkWrapper .slidesjs-pagination {
       width: 180px; }
     #mbrtWrap #yield #lovemarkWrapper .pageSlider .slide-0 .sectionTitle {

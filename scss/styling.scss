@@ -221,7 +221,8 @@ $storyBGC: #000;
 	}
 }
 
-.teamYield{
+
+.teamYield-0, .teamYield-2{
 	background: #000;
 
 	#mainNavigator{
@@ -247,6 +248,33 @@ $storyBGC: #000;
 		}
 	}
 }
+.teamYield-1{
+	background: #fff;
+
+	#mainNavigator{
+		ul{
+			li{
+				a{
+					color: #000;
+				}
+			}
+			
+			.mainLogo{
+				a{
+					.whiteLB{
+						@include opacity(0);
+					}
+				}
+			}
+			.mainTitles{
+				a{
+					border-right: 2px solid #000;
+				}
+			}
+		}
+	}
+}
+
 
 .lovemarkYield{
 	@include bgGradientGray();
@@ -541,7 +569,6 @@ $storyBGC: #000;
 					     -o-transform: translateX(-100%);
 					        transform: translateX(-100%);
 			    }
-
 			}
 		}
 
@@ -1175,7 +1202,7 @@ $storyBGC: #000;
 
 		#teamWrapper{
 
-			.slidesjs-pagination{
+			.mbrt-pagination{
 				width: 130px;
 			}
 
@@ -1408,6 +1435,10 @@ $storyBGC: #000;
 							}
 						}
 					}
+				}
+
+				.slides{
+					@include transitions(all, 0.5s, ease-out);
 				}
 			}
 		}
