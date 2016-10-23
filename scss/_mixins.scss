@@ -39,3 +39,30 @@
   	   -moz-box-sizing: border-box;
   			box-sizing: border-box;
 }
+
+@mixin smoothFont(){
+	-webkit-font-smoothing: antialiased;
+	   -moz-font-smoothing: antialiased;
+	    -ms-font-smoothing: antialiased;
+	     -o-font-smoothing: antialiased;
+	        font-smoothing: antialiased;
+}
+
+@mixin bgGradientRed(){
+	background: rgba(200,36,63,1);
+	background: -moz-linear-gradient(left, rgba(200,36,63,1) 0%, rgba(149,21,42,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(200,36,63,1)), color-stop(100%, rgba(149,21,42,1)));
+	background: -webkit-linear-gradient(left, rgba(200,36,63,1) 0%, rgba(149,21,42,1) 100%);
+	background: -o-linear-gradient(left, rgba(200,36,63,1) 0%, rgba(149,21,42,1) 100%);
+	background: -ms-linear-gradient(left, rgba(200,36,63,1) 0%, rgba(149,21,42,1) 100%);
+	background: linear-gradient(to right, rgba(200,36,63,1) 0%, rgba(149,21,42,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8243f', endColorstr='#95152a', GradientType=1 );
+}
+
+@mixin bgGradientGray(){
+	background: #626262; /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(#a2a2a2, #626262); /* Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(#a2a2a2, #626262); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(#a2a2a2, #626262); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(#a2a2a2, #626262); /* Standard syntax */
+}

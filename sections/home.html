@@ -1,25 +1,44 @@
 <div id="homeWrapper" class="yieldedWrapper">
 
-	<div id="pageSlider">
-		<section id="slide-0" class="slides active">
-			<h1>Slide 0</h1>
-		</section>
-		<section id="slide-1" class="slides">
-			<h1>Slide 1</h1>
-		</section>
-		<section id="slide-2" class="slides">
-			<h1>Slide 2</h1>
-		</section>
-	</div>
+    <div id="homeSlider" class="pageSlider">
+        <section class="slide-0 slides">
+            <div class="quoteBox">
+                <div class="mainQuote singleQuote">Ideas</div>
+                <div class="subQuote">que laten</div>
+            </div>
+        </section>
+        
+        <section class="slide-1 slides">
+            <div class="quoteBox">
+                <div class="mainQuote singleQuote">Marcas</div>
+                <div class="subQuote">que enamoran</div>
+            </div>
+        </section>
+        
+        <section class="slide-2 slides">
+            <div class="quoteBox">
+                <div class="mainQuote doubleQuote"><span class="firstLine">Estrategia</span> <br> <span class="secondLine">y Creatividad</span></div>
+                <div class="subQuote">que conquistan</div>
+            </div>
+        </section>
 
+        <a href="#" class="slidesjs-previous slidesjs-navigation"><i class="icon-chevron-left"></i></a>
+      	<a href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right"></i></a>
+    </div>
 
-    <li class="arrowControls prevControl"><a href="#" data-slide="prev" class="slide-navs"></a></li>
-    <li class="arrowControls nextControl"><a href="#" data-slide="next" class="slide-navs"></a></li>
-
-
-	<ul id="pagination">
-		<li><a href="#" id="slider-projectDot-0" data-slide="0" class="slide-navs active"></a></li>
-		<li><a href="#" id="slider-projectDot-1" data-slide="1" class="slide-navs"></a></li>
-		<li><a href="#" id="slider-projectDot-2" data-slide="2" class="slide-navs"></a></li>
-	</ul>
+    <ul class="socialLinks">
+    	<li class="labelBttn"><a href="#">Únete</a></li>
+    	<li class="iconBttn"><a href="#"><i class="spriteRS sprite-Fb"></i></a></li>
+    	<li class="iconBttn"><a href="#"><i class="spriteRS sprite-Tw"></i></a></li>
+    </ul>
 </div>
+
+<!-- SlidesJS Required: Initialize SlidesJS with a jQuery doc ready -->
+  <script>
+    $(function() {
+      $('#homeSlider').slidesjs({
+        navigation: true
+      });
+    });
+</script>
+<!-- End SlidesJS Required -->
