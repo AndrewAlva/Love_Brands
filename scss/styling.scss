@@ -9,6 +9,19 @@ $mainRed: #c8243f;
 $homeBGC: #e2c3a7;
 $storyBGC: #000;
 
+// Animatables
+.toFadeIn{
+	@include opacity(0);
+	-webkit-transform: translateY(10px);
+	   -moz-transform: translateY(10px);
+	    -ms-transform: translateY(10px);
+	     -o-transform: translateY(10px);
+	        transform: translateY(10px);
+}
+.smoothTrans{
+	@include transitions(all, 0.4s, ease-out);
+}
+
 #loader{
 	position: fixed;
 	width: 100%;
@@ -83,6 +96,7 @@ $storyBGC: #000;
 	}
 }
 
+
 .storyYield-0{
 	background: #000;
 
@@ -109,7 +123,6 @@ $storyBGC: #000;
 		}
 	}
 }
-
 .storyYield-1{
 	background: #fafaf1;
 
@@ -138,6 +151,7 @@ $storyBGC: #000;
 		}
 	}
 }
+
 
 .doYield{
 	@include bgGradientGray();
@@ -373,7 +387,7 @@ $storyBGC: #000;
 		z-index: 10000000000;
 		width: 100%;
 		height: 100%;
-		@include bgGradientRed();
+		background: #000;
 		@include transitions(all, .6s, ease-out);
 
 		.videoContainer{

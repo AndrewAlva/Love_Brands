@@ -1,7 +1,7 @@
 window.onload = function(){
 	Site.is_loading = false;
 	$('#loader').addClass('lb_crystal');
-	setTimeout(function(){$('#loader').addClass('lb_hide');},600);
+	setTimeout(function(){$('#loader').addClass('lb_hide'); introFadeIn();},600);
 }
 
 
@@ -58,6 +58,18 @@ function removeVideo(){
 	$('#videoWrapper').addClass('lb_crystal');
 	setTimeout(function(){$('#videoWrapper').remove();},600);
 }
+
+function introFadeIn(){
+	var elToEnter = $('.toFadeIn');
+
+	elToEnter.each(function(index, el) {
+		setTimeout(function(){
+			$(el).removeClass('toFadeIn');
+		},(index * 100));
+	});
+}
+
+
 
 // STORY SLIDER OBJECT
 
@@ -215,6 +227,7 @@ function removeVideo(){
 
 
 
+
 // TEAM SLIDER OBJECT
 
 	var Team_Slider = {
@@ -368,6 +381,7 @@ function removeVideo(){
 		event.preventDefault();
 		Team_Slider.goTo($(this).data('slidetogo'));
 	});
+
 
 
 
