@@ -53,13 +53,35 @@ $storyBGC: #000;
 .lb_crystal{@include opacity(0);}
 .lb_hide{display: none;}
 
+.homeYield{
+	background: $homeBGC;
+}
+
 #mbrtWrap{
+	z-index: 1;
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
+
+	#videoWrapper{
+		position: absolute;
+		z-index: 10000000000;
+		width: 100%;
+		height: 100%;
+		@include bgGradientRed();
+		@include transitions(all, .8s, ease-out);
+
+		.videoContainer{
+			position: absolute;
+			width: 1200px;
+			height: 675px;
+			margin: auto;
+			top: 0; bottom: 0; left: 0; right: 0;
+		}
+	}
 
 	.mnColour-1{
 		ul{
@@ -313,6 +335,7 @@ $storyBGC: #000;
 		   				top: 400px;
 		   				right: 120px;
 		   				text-transform: uppercase;
+		   				@include heartBeating();
 
 		   				.mainQuote{
 		   					color: $mainRed;

@@ -19,9 +19,9 @@ var Site = {
 	loading_dots: [],
 
 	init: function(){
-		if (initQuery == "") {
-			$('#yield').load('sections/team.html');
-		};
+		// if (initQuery == "") {
+		// 	$('#yield').load('sections/team.html');
+		// };
 
 		Site.loading_dots = $('.isoDots');
 		Site.loading(0);
@@ -49,4 +49,9 @@ var Site = {
 			};
 		};
 	}
+}
+
+function removeVideo(){
+	$('#videoWrapper').addClass('lb_crystal');
+	setTimeout(function(){$('#videoWrapper').remove();},800);
 }

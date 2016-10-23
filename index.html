@@ -57,7 +57,17 @@
         </div>
 
 
-        <div id="mbrtWrap">
+        <div id="mbrtWrap" class="homeYield">
+            <div id="videoWrapper">
+                <div class="videoContainer">
+                    <video id="introVideo" autoplay="autoplay" preload style="visibility: visible; position: absolute; z-index: -1;" width="1200" height="675" onended="removeVideo()">
+                        <source src="vids/intro_LoveBrands.webm" type="video/webm" />
+                        <source src="vids/intro_LoveBrands.ogv" type="video/ogg" />
+                        <source src="vids/intro_LoveBrands.mp4" />
+                    </video>
+                </div>
+            </div>
+
             <header id="mainNavigator" class="mnColour-2">
                 <ul>
                     <li class="mainNavs mainLogo">
@@ -82,7 +92,40 @@
             </header>
 
             <div id="yield">
-                <!-- RENDER AJAX -->
+                <div id="homeWrapper" class="yieldedWrapper">
+
+                    <div id="homeSlider" class="pageSlider">
+                        <section class="slide-0 slides">
+                            <div class="quoteBox">
+                                <div class="mainQuote singleQuote">Ideas</div>
+                                <div class="subQuote">que laten</div>
+                            </div>
+                        </section>
+                        
+                        <section class="slide-1 slides">
+                            <div class="quoteBox">
+                                <div class="mainQuote singleQuote">Marcas</div>
+                                <div class="subQuote">que enamoran</div>
+                            </div>
+                        </section>
+                        
+                        <section class="slide-2 slides">
+                            <div class="quoteBox">
+                                <div class="mainQuote doubleQuote"><span class="firstLine">Estrategia</span> <br> <span class="secondLine">y Creatividad</span></div>
+                                <div class="subQuote">que conquistan</div>
+                            </div>
+                        </section>
+
+                        <a href="#" class="slidesjs-previous slidesjs-navigation"><i class="icon-chevron-left"></i></a>
+                        <a href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right"></i></a>
+                    </div>
+
+                    <ul class="socialLinks">
+                        <li class="labelBttn"><a href="#">Únete</a></li>
+                        <li class="iconBttn"><a href="#"><i class="spriteRS sprite-Fb"></i></a></li>
+                        <li class="iconBttn"><a href="#"><i class="spriteRS sprite-Tw"></i></a></li>
+                    </ul>
+                </div>
                 
             </div>
         </div>
@@ -92,6 +135,16 @@
         <script src="js/vendor/jquery.slides.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+
+        <!-- SlidesJS Required: Initialize SlidesJS with a jQuery doc ready -->
+            <script>
+                $(function() {
+                  $('#homeSlider').slidesjs({
+                    navigation: true
+                  });
+                });
+            </script>
+        <!-- End SlidesJS Required -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

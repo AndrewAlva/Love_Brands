@@ -1,3 +1,29 @@
+@keyframes heart-beats {
+  0% {
+    transform: scale(1); }
+  7% {
+    transform: scale(1.03); }
+  12% {
+    transform: scale(1.01); }
+  20% {
+    transform: scale(1.06); }
+  60% {
+    transform: scale(1); }
+  100% {
+    transform: scale(0.99); } }
+@-webkit-keyframes heart-beats {
+  0% {
+    -webkit-transform: scale(1); }
+  7% {
+    -webkit-transform: scale(1.03); }
+  12% {
+    -webkit-transform: scale(1.01); }
+  20% {
+    -webkit-transform: scale(1.06); }
+  60% {
+    -webkit-transform: scale(1); }
+  100% {
+    -webkit-transform: scale(0.99); } }
 @font-face {
   font-family: 'Gill';
   src: url("../fonts/GillSansMT.eot");
@@ -119,13 +145,44 @@
 .lb_hide {
   display: none; }
 
+.homeYield {
+  background: #e2c3a7; }
+
 #mbrtWrap {
+  z-index: 1;
   position: absolute;
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden; }
+  #mbrtWrap #videoWrapper {
+    position: absolute;
+    z-index: 10000000000;
+    width: 100%;
+    height: 100%;
+    background: #c8243f;
+    background: -moz-linear-gradient(left, #c8243f 0%, #95152a 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #c8243f), color-stop(100%, #95152a));
+    background: -webkit-linear-gradient(left, #c8243f 0%, #95152a 100%);
+    background: -o-linear-gradient(left, #c8243f 0%, #95152a 100%);
+    background: -ms-linear-gradient(left, #c8243f 0%, #95152a 100%);
+    background: linear-gradient(to right, #c8243f 0%, #95152a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c8243f', endColorstr='#95152a', GradientType=1 );
+    -webkit-transition: all 0.8s ease-out;
+    -moz-transition: all 0.8s ease-out;
+    -ms-transition: all 0.8s ease-out;
+    -o-transition: all 0.8s ease-out;
+    transition: all 0.8s ease-out; }
+    #mbrtWrap #videoWrapper .videoContainer {
+      position: absolute;
+      width: 1200px;
+      height: 675px;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0; }
   #mbrtWrap .mnColour-1 ul li a {
     color: #fff; }
   #mbrtWrap .mnColour-1 ul .mainLogo a .blackLB {
@@ -342,7 +399,12 @@
         margin: auto;
         top: 400px;
         right: 120px;
-        text-transform: uppercase; }
+        text-transform: uppercase;
+        -webkit-animation: heart-beats 1.5s ease infinite;
+        -moz-animation: heart-beats 1.5s ease infinite;
+        -ms-animation: heart-beats 1.5s ease infinite;
+        -o-animation: heart-beats 1.5s ease infinite;
+        animation: heart-beats 1.5s ease infinite; }
         #mbrtWrap #yield #homeWrapper .pageSlider .slides .quoteBox .mainQuote {
           color: #c8243f;
           font-family: 'Lato', sans-serif;

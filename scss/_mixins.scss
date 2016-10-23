@@ -66,3 +66,31 @@
     background: -moz-radial-gradient(#a2a2a2, #626262); /* For Firefox 3.6 to 15 */
     background: radial-gradient(#a2a2a2, #626262); /* Standard syntax */
 }
+
+@mixin heartBeating(){
+	-webkit-animation: heart-beats 1.5s ease infinite;
+	   -moz-animation: heart-beats 1.5s ease infinite;
+	    -ms-animation: heart-beats 1.5s ease infinite;
+	     -o-animation: heart-beats 1.5s ease infinite;
+	        animation: heart-beats 1.5s ease infinite;
+}
+
+@keyframes heart-beats {
+  0%   { transform: scale(1); }
+  7%   { transform: scale(1.03); }
+  12%  { transform: scale(1.01); }
+  20%  { transform: scale(1.06); }
+  60%  { transform: scale(1); }
+  100% { transform: scale(0.99); }
+}
+
+@-webkit-keyframes heart-beats {
+  0%  { -webkit-transform: scale(1); }
+  7%  { -webkit-transform: scale(1.03); }
+  12% { -webkit-transform: scale(1.01); }
+  20% { -webkit-transform: scale(1.06); }
+  60% { -webkit-transform: scale(1); }
+  100% { -webkit-transform: scale(0.99); }
+}
+
+
