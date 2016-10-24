@@ -57,7 +57,7 @@
 
 
         <div id="mbrtWrap" class="homeYield">
-            <div id="videoWrapper">
+            <!-- <div id="videoWrapper">
                 <div class="videoContainer">
                     <video id="introVideo" autoplay="autoplay" preload style="visibility: visible; position: absolute; z-index: -1;" width="1200" height="675" onended="removeVideo()">
                         <source src="vids/intro_LoveBrands.webm" type="video/webm" />
@@ -65,7 +65,7 @@
                         <source src="vids/intro_LoveBrands.mp4" />
                     </video>
                 </div>
-            </div>
+            </div> -->
 
             <header id="mainNavigator">
                 <ul>
@@ -116,7 +116,7 @@
                         </section>
 
                         <a href="#" class="slidesjs-previous slidesjs-navigation"><i class="icon-chevron-left"></i></a>
-                        <a href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right"></i></a>
+                        <a id="goNextProject" href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right"></i></a>
                     </div>
 
                     <ul class="socialLinks">
@@ -139,10 +139,47 @@
             <script>
                 $(function() {
                   $('#homeSlider').slidesjs({
-                    navigation: true
+                    navigation: {
+                        active: false
+                    }
                   });
                 });
+
+                // HOME SLIDER INTERACTION
+                var homeSliderInterval;
+                playHomeSlider();
+
+                $('#homeWrapper').on('click', '.slidesjs-navigation', function(event) {
+                    event.preventDefault();
+                    resetHomeSlider();
+                });
+                $('#homeWrapper').on('click', '.slidesjs-pagination-item', function(event) {
+                    event.preventDefault();
+                    resetHomeSlider();
+                });
+
+                function playHomeSlider(){
+                    homeSliderInterval = setInterval(function(){eventFire(document.getElementById('goNextProject'), 'click');}, 4000);
+                }
+
+                function resetHomeSlider(){
+                    clearInterval(homeSliderInterval);
+                    playHomeSlider();
+                }
+
+                function eventFire(el, etype){
+                    if (el.fireEvent) {
+                        el.fireEvent('on' + etype);
+                    } else {
+                        var evObj = document.createEvent('Events');
+                        evObj.initEvent(etype, true, false);
+                        el.dispatchEvent(evObj);
+                    }
+                }
+
             </script>
+
+
         <!-- End SlidesJS Required -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

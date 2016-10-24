@@ -7,6 +7,7 @@ window.onload = function(){
 
 $(document).ready(function() {
 	Site.init();
+	
 	Story_Slider.init();
 	Team_Slider.init();
 	Lovemark_Slider.init();
@@ -68,6 +69,8 @@ function introFadeIn(){
 		},(index * 100));
 	});
 }
+
+    
 
 
 
