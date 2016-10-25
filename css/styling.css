@@ -668,6 +668,7 @@
           text-align: right;
           float: right; }
       #mbrtWrap #yield #homeWrapper .socialLinks {
+        z-index: 10;
         position: absolute;
         width: 245px;
         height: 36px;
