@@ -1,6 +1,6 @@
 <?php 
 
-	$mail_to = 'andrew@mandelbrot.mx';
+	$mail_to = 'contacto@lovebrandsmx.com';
 
 
 	$name = $_POST['name'];
